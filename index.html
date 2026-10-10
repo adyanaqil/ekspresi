@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ekspresi Consulting &amp; Research</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f8f9fc;
+      --bg-raise: #ffffff;
+      --ink: #0a0a0a;
+      --ink-soft: #52525f;
+      --ink-faint: #8b8b96;
+      --line: #e7e7ee;
+      --line-strong: #d3d3df;
+      --primary: #000080;
+      --primary-ink: #ffffff;
+      --primary-soft: #e8e8f7;
+      --primary-soft-line: #c7c7ea;
+      --accent: #e10600;
+      --accent-soft: #fde8e7;
+      --tertiary: #6b5bba;
+      --tertiary-soft: #ece9f8;
+      --shadow: 0 20px 45px -25px rgba(10, 10, 40, 0.15);
+      --hero-bg: #0d0e34;
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      padding-inline: clamp(16px, 4vw, 48px);
+    }
+
+    h1, h2, h3 {
+      font-family: "Fraunces", Georgia, serif;
+      text-wrap: balance;
+      margin: 0;
+    }
+
+    .mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1140px;
+      margin-inline: auto;
+    }
+
+    /* ---------- HEADER SITE ---------- */
+    header.site {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 16px;
+      max-width: 1140px;
+      margin-inline: auto;
+      gap: 16px 24px;
+      background: #ffffff;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      display: block;
+      height: 48px;
+      width: auto;
+    }
+
+    nav.primary {
+      display: flex;
+      gap: 28px;
+      font-size: 0.94rem;
+      font-weight: 500;
+      color: #333340;
+    }
+
+    nav.primary a {
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    nav.primary a:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-header {
+      background: #000080;
+      color: #ffffff;
+      padding: 10px 24px;
+    }
+
+    .btn-header:hover {
+      background: #0000b3;
+    }
+
+    .btn-hero-primary {
+      background: #ffffff;
+      color: #000080;
+    }
+
+    .btn-hero-primary:hover {
+      background: #f0f0f8;
+    }
+
+    .btn-hero-outline {
+      background: transparent;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .btn-hero-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    @media (max-width: 900px) {
+      nav.primary { display: none; }
+    }
+
+    /* ---------- HERO CONTAINER ---------- */
+    .hero-container {
+      position: relative;
+      background-color: var(--hero-bg);
+      background-image: 
+        linear-gradient(90deg, rgba(13, 14, 52, 0.92) 0%, rgba(13, 14, 52, 0.78) 55%, rgba(13, 14, 52, 0.45) 100%),
+        url("assets/hero_bg.jpg");
+      background-position: center 30%;
+      background-size: cover;
+      border-radius: 28px;
+      padding: clamp(32px, 6vw, 60px) clamp(24px, 5vw, 48px) clamp(36px, 6vw, 56px);
+      color: #ffffff;
+      box-shadow: 0 20px 45px -20px rgba(13, 14, 52, 0.4);
+      margin-top: 10px;
+    }
+
+    .hero-content {
+      max-width: 620px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ffffff;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+      line-height: 1.08;
+      font-weight: 600;
+      margin-top: 20px;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+    }
+
+    .hero-content p.lede {
+      margin-top: 18px;
+      font-size: clamp(0.98rem, 1.5vw, 1.12rem);
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.6;
+      max-width: 48ch;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .hero-meta-note .dots-icon {
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: -2px;
+      font-weight: bold;
+    }
+
+    /* ---------- PATH CARDS ---------- */
+    .paths-wrapper {
+      margin-top: clamp(24px, 4vw, 36px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      position: relative;
+      z-index: 3;
+    }
+
+    @media (max-width: 768px) {
+      .paths-wrapper { grid-template-columns: 1fr; }
+    }
+
+    .path-card {
+      background: var(--bg-raise);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 26px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 12px 32px -16px rgba(15, 18, 74, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .path-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px -12px rgba(15, 18, 74, 0.18);
+    }
+
+    .path-card .tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .path-card.individu .tag { color: var(--tertiary); }
+    .path-card.institusi .tag { color: #000080; }
+
+    .path-card h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #000080;
+    }
+
+    .path-card p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.94rem;
+      line-height: 1.55;
+      flex-grow: 1;
+    }
+
+    .path-card .go {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .path-card.individu .go { color: var(--tertiary); }
+    .path-card.institusi .go { color: #000080; }
+
+    /* ---------- PARTNERSHIP LOGOS STRIP ---------- */
+    .partnership-section {
+      padding-block: 76px 76px;
+      margin-block: 64px 64px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .partnership-header {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .marquee-container {
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      flex-shrink: 0;
+      width: max-content;
+      animation: scroll-left 28s linear infinite;
+    }
+
+    .marquee-container:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .partner-logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      max-width: 260px;
+      opacity: 0.95;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .partner-logo-item:hover {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+
+    .partner-logo-item img {
+      max-height: 76px;
+      max-width: 240px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* ---------- SECTION SHELL ---------- */
+    section { padding-block: clamp(44px, 6vw, 76px); }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      max-width: 20ch;
+      color: #000080;
+    }
+
+    .section-head p {
+      color: var(--ink-soft);
+      max-width: 42ch;
+      margin: 10px 0 0;
+      line-height: 1.55;
+    }
+
+    /* ---------- CATALOG ---------- */
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 920px) { .catalog { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .catalog { grid-template-columns: 1fr; } }
+
+    .test-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: var(--bg-raise);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .test-card .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--tertiary-soft);
+      color: var(--tertiary);
+      flex-shrink: 0;
+    }
+
+    .test-card h3 {
+      font-size: 1.12rem;
+      font-weight: 600;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      color: #000080;
+    }
+
+    .test-card .meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+    }
+
+    .test-card .meta span {
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 10px;
+    }
+
+    .test-card .desc {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .test-card .foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+    }
+
+    .price {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 0.98rem;
+      color: #000080;
+    }
+
+    .price small {
+      display: block;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 400;
+      color: var(--ink-faint);
+      font-size: 0.7rem;
+    }
+
+    .mini-btn {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--tertiary);
+      text-decoration: none;
+    }
+
+    /* ---------- SECTION TENAGA PROFESIONAL KAMI ---------- */
+    .team-section {
+      padding-block: clamp(48px, 6vw, 76px);
+      border-top: 1px solid var(--line);
+    }
+
+    .team-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .team-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--tertiary);
+      background: var(--tertiary-soft);
+      border: 1px solid #d4cdef;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .team-badge .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--tertiary);
+    }
+
+    .team-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: #000080;
+      letter-spacing: -0.01em;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 992px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .team-grid { grid-template-columns: 1fr; }
+    }
+
+    .team-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px 16px 22px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px -10px rgba(0, 0, 128, 0.12);
+    }
+
+    .team-img-wrap {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      background: #f0f2f8;
+    }
+
+    .team-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover .team-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .team-name {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #000080;
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .team-role {
+      font-size: 0.84rem;
+      color: var(--ink-soft);
+    }
+
+    /* ---------- SAMPLE REPORT ---------- */
+    .report {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) { .report { grid-template-columns: 1fr; } }
+
+    .report-copy p {
+      color: var(--ink-soft);
+      line-height: 1.6;
+      max-width: 46ch;
+    }
+
+    .report-checks {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .report-checks li {
+      display: flex;
+      gap: 10px;
+      font-size: 0.94rem;
+      color: var(--ink);
+    }
+
+    .report-checks li::before {
+      content: "✓";
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--tertiary-soft);
+      color: var(--tertiary);
+      font-weight: bold;
+      font-size: 0.75rem;
+    }
+
+    .report-card {
+      background: var(--bg-raise);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .report-card .rhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 18px;
+    }
+
+    .report-card .rhead b {
+      font-family: "Fraunces", serif;
+      font-size: 1.05rem;
+      color: #000080;
+    }
+
+    .report-card .rhead span {
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 90px 1fr 46px;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .bar-row .label { font-size: 0.82rem; color: var(--ink-soft); }
+    .bar-row .track { height: 9px; border-radius: 999px; background: var(--bg-alt); overflow: hidden; border: 1px solid var(--line); }
+    .bar-row .fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #000080, var(--tertiary)); }
+    .bar-row .val { font-family: "IBM Plex Mono", monospace; font-size: 0.82rem; text-align: right; color: var(--ink); }
+    .report-note { margin-top: 16px; font-size: 0.76rem; color: var(--ink-faint); font-style: italic; }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 860px) { .testimonials { grid-template-columns: 1fr; } }
+    .t-card { border: 1px solid var(--line); border-radius: 18px; padding: 22px; background: var(--bg-alt); display: flex; flex-direction: column; gap: 14px; }
+    .t-card p.quote { font-size: 0.96rem; line-height: 1.55; color: var(--ink); margin: 0; }
+    .t-card .who { display: flex; align-items: center; gap: 10px; font-size: 0.83rem; color: var(--ink-soft); }
+    .t-card .who .av { width: 32px; height: 32px; border-radius: 50%; background: var(--primary-soft); flex-shrink: 0; }
+    .t-card .who b { color: var(--ink); }
+    .t-card .badge { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+    .t-card.b2c .badge { color: var(--tertiary); }
+    .t-card.b2b .badge { color: #000080; }
+
+    /* ---------- B2B STRIP & FOOTER ---------- */
+    .b2b-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-soft-line);
+      border-radius: 22px;
+      padding: 32px clamp(22px, 4vw, 40px);
+    }
+    .b2b-strip h3 { font-size: 1.3rem; max-width: 24ch; color: #000080; }
+    .b2b-strip p { color: var(--ink-soft); max-width: 40ch; margin: 8px 0 0; line-height: 1.5; }
+
+    .final-cta { text-align: center; padding-block: clamp(56px, 8vw, 96px); }
+    .final-cta h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); max-width: 22ch; margin-inline: auto; color: #000080; }
+    .final-cta p { color: var(--ink-soft); max-width: 40ch; margin: 14px auto 0; line-height: 1.55; }
+    .final-cta .hero-ctas { justify-content: center; margin-top: 26px; }
+
+    footer.site {
+      border-top: 1px solid var(--line);
+      padding-block: 30px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--ink-faint);
+      font-size: 0.84rem;
+    }
+    footer.site nav { display: flex; gap: 18px; }
+    footer.site a { text-decoration: none; }
+    footer.site a:hover { color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAVIGASI -->
+  <header class="site">
+    <div class="brand">
+      <img src="assets/brand_logo.png" alt="Ekspresi Consulting &amp; Research">
+    </div>
+    <nav class="primary">
+      <a href="#tentang">Tentang</a>
+      <a href="#tes">Tes &amp; Asesmen</a>
+      <a href="#tim">Tim Kami</a>
+      <a href="#hasil">Contoh Hasil</a>
+      <a href="#cerita">Cerita Pengguna</a>
+      <a href="#institusi">Untuk Institusi</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-header" href="#tes">Mulai Tes ↗</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- HERO SECTION -->
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">
+          <span class="dot"></span> PSIKOTES &amp; TES IQ ONLINE
+        </span>
+        <h1>Kenali potensimu,<br>mulai dari tes<br>yang tepat.</h1>
+        <p class="lede">Tes psikologi yang disusun psikolog berlisensi HIMPSI, bisa kamu mulai sendiri hari ini — hasil jelas, harga jelas, tanpa perlu menghubungi siapa pun dulu.</p>
+        
+        <div class="hero-ctas">
+          <a class="btn btn-hero-primary" href="#tes">Lihat Semua Tes →</a>
+          <a class="btn btn-hero-outline" href="#hasil">Lihat Contoh Hasil</a>
+        </div>
+
+        <div class="hero-meta-note">
+          <span class="dots-icon">•••</span> Diawasi psikolog berlisensi HIMPSI · hasil bisa diunduh
+        </div>
+      </div>
+    </div>
+
+    <!-- PATH CARDS (OVERLAPPING BELOW HERO) -->
+    <div class="paths-wrapper">
+      <div class="path-card individu">
+        <span class="tag">UNTUK INDIVIDU &amp; KELUARGA</span>
+        <h3>Tes untuk kamu, anak, atau pasanganmu</h3>
+        <p>Tes IQ, minat bakat, kepribadian, dan kesiapan sekolah — kerjakan online, hasil dan rekomendasi langsung bisa diunduh.</p>
+        <a class="go" href="#tes">Pilih tes individu →</a>
+      </div>
+      <div class="path-card institusi">
+        <span class="tag">UNTUK SEKOLAH &amp; PERUSAHAAN</span>
+        <h3>Asesmen &amp; program untuk timmu</h3>
+        <p>Rekrutmen, pemetaan talenta, pelatihan EVOLVE, konseling REFLECT — dikerjakan bersama tim konsultan Ekspresi.</p>
+        <a class="go" href="#institusi">Jadwalkan konsultasi →</a>
+      </div>
+    </div>
+
+    <!-- PARTNERSHIP LOGOS STRIP (INFINITE MARQUEE LEFT) -->
+    <div class="partnership-section">
+      <div class="partnership-header">DIKERJAKAN BERSAMA MITRA &amp; INSTITUSI TERPERCAYA</div>
+      <div class="marquee-container">
+        <div class="marquee-track">
+          <!-- First Set of Partner Logos -->
+          <div class="partner-logo-item">
+            <img src="assets/logo_pertamedika.png" alt="Pertamedika - Pertamina Bina Medika">
+          </div>
+          <div class="partner-logo-item">
+            <img src="assets/logo_homesmart.webp" alt="HomeSmart">
+          </div>
+          <div class="partner-logo-item">
+            <img src="assets/logo_del.jpg" alt="SMA Unggul Del">
+          </div>
+          <div class="partner-logo-item">
+            <img src="assets/logo_alamjad.png" alt="Perguruan Islam Al-Amjad">
+          </div>
+          <div class="partner-logo-item">
+            <img src="assets/logo_socfindo.png" alt="PT. Socfin Indonesia (Socfindo)">
+          </div>
+
+          <!-- Duplicate Set for Seamless Infinite Loop -->
+          <div class="partner-logo-item">
+            <img src="assets/logo_pertamedika.png" alt="Pertamedika - Pertamina Bina Medika">
+          </div>
+          <div class="partner-logo-item">
+            <img src="assets/logo_homesmart.webp" alt="HomeSmart">
+          </div>
+          <div class="partner-logo-item">
+            <img src="assets/logo_del.jpg" alt="SMA Unggul Del">
+          </div>
+          <div class="partner-logo-item">
+            <img src="assets/logo_alamjad.png" alt="Perguruan Islam Al-Amjad">
+          </div>
+          <div class="partner-logo-item">
+            <img src="assets/logo_socfindo.png" alt="PT. Socfin Indonesia (Socfindo)">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATALOG SECTION -->
+    <section id="tes">
+      <div class="section-head">
+        <h2>Pilih tes yang sesuai kebutuhanmu</h2>
+        <p>Semua tes dikembangkan dan diawasi psikolog berlisensi. Hasil langsung dapat diunduh begitu selesai pengerjaan.</p>
+      </div>
+      <div class="catalog">
+        <div class="test-card">
+          <span class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4.3"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/></svg></span>
+          <h3>Tes IQ Standar</h3>
+          <div class="meta"><span>Usia 12+</span><span>60 menit</span><span>Online</span></div>
+          <p class="desc">Mengukur kemampuan logika, numerik, dan spasial dengan norma yang disesuaikan populasi Indonesia.</p>
+          <div class="foot">
+            <div class="price mono">Rp150rb<small>mulai dari*</small></div>
+            <a class="mini-btn" href="#">Mulai Tes →</a>
+          </div>
+        </div>
+        <div class="test-card">
+          <span class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M15 9.2l-2.1 4.9-4.9 2.1 2.1-4.9z"/></svg></span>
+          <h3>Tes Minat &amp; Bakat</h3>
+          <div class="meta"><span>Usia 15–18</span><span>45 menit</span><span>Online</span></div>
+          <p class="desc">Bantu siswa SMA menentukan jurusan kuliah berdasarkan minat, bakat, dan potensi karier.</p>
+          <div class="foot">
+            <div class="price mono">Rp175rb<small>mulai dari*</small></div>
+            <a class="mini-btn" href="#">Mulai Tes →</a>
+          </div>
+        </div>
+        <div class="test-card">
+          <span class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2l8.5 4.65-8.5 4.65-8.5-4.65L12 3.2z"/><path d="M3.5 13.5l8.5 4.65 8.5-4.65"/></svg></span>
+          <h3>Tes Kepribadian</h3>
+          <div class="meta"><span>Dewasa</span><span>30 menit</span><span>Online</span></div>
+          <p class="desc">Memahami pola kerja, komunikasi, dan pengambilan keputusanmu untuk pengembangan diri atau karier.</p>
+          <div class="foot">
+            <div class="price mono">Rp120rb<small>mulai dari*</small></div>
+            <a class="mini-btn" href="#">Mulai Tes →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION TENAGA PROFESIONAL KAMI (BELOW #TES) -->
+    <div id="tim" class="team-section">
+      <div class="team-header">
+        <div>
+          <span class="team-badge">
+            <span class="badge-dot"></span> Tenaga Ahli
+          </span>
+          <h2>TENAGA PROFESIONAL KAMI</h2>
+        </div>
+        <a href="#tim" class="btn btn-header">Tim Kami →</a>
+      </div>
+
+      <div class="team-grid">
+        <!-- Team 1: Jeffry -->
+        <div class="team-card">
+          <div class="team-img-wrap">
+            <img src="assets/team_jeffry.png" alt="Jeffry, M.Psi, Psikolog, CHt.">
+          </div>
+          <div class="team-name">Jeffry, M.Psi, Psikolog, CHt.</div>
+          <div class="team-role">Profesional psikolog</div>
+        </div>
+
+        <!-- Team 2: Iqbal -->
+        <div class="team-card">
+          <div class="team-img-wrap">
+            <img src="assets/team_iqbal.png" alt="Iqbal Hadi Pradigna M.Psi., Psikolog">
+          </div>
+          <div class="team-name">Iqbal Hadi Pradigna M.Psi., Psikolog</div>
+          <div class="team-role">Profesional psikolog</div>
+        </div>
+
+        <!-- Team 3: Hary -->
+        <div class="team-card">
+          <div class="team-img-wrap">
+            <img src="assets/team_hary.png" alt="Hary Irvan Tarigan M.Psi., Psikolog">
+          </div>
+          <div class="team-name">Hary Irvan Tarigan M.Psi., Psikolog</div>
+          <div class="team-role">Profesional psikolog</div>
+        </div>
+
+        <!-- Team 4: Hazrati -->
+        <div class="team-card">
+          <div class="team-img-wrap">
+            <img src="assets/team_sarah.png" alt="Hazrati Marha Ruslan M.Psi., Psikolog">
+          </div>
+          <div class="team-name">Hazrati Marha Ruslan M.Psi., Psikolog</div>
+          <div class="team-role">Profesional psikolog</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REPORT SAMPLE SECTION -->
+    <section id="hasil">
+      <div class="report">
+        <div class="report-copy">
+          <span class="eyebrow" style="color:var(--tertiary); background:var(--tertiary-soft); border:1px solid var(--tertiary-soft-line); padding:5px 12px; border-radius:999px; font-size:0.75rem; font-weight:700;">● Bukan kotak hitam</span>
+          <h2 style="margin-top:16px;">Kamu tahu persis apa yang kamu bayar</h2>
+          <p>Setiap tes menghasilkan laporan yang bisa dibaca sendiri — bukan angka mentah tanpa konteks. Dijelaskan dengan bahasa yang mudah dipahami, ditinjau oleh psikolog berlisensi sebelum dikirim ke kamu.</p>
+          <ul class="report-checks">
+            <li>Skor per dimensi dengan penjelasan singkat</li>
+            <li>Rekomendasi langkah lanjutan yang konkret</li>
+            <li>PDF bisa diunduh &amp; disimpan selamanya</li>
+          </ul>
+        </div>
+        <div class="report-card">
+          <div class="rhead"><b>Contoh Laporan — Tes Kepribadian</b><span>SAMPEL</span></div>
+          <div class="bar-row"><span class="label">Analitis</span><div class="track"><div class="fill" style="width:82%"></div></div><span class="val">82</span></div>
+          <div class="bar-row"><span class="label">Komunikasi</span><div class="track"><div class="fill" style="width:64%"></div></div><span class="val">64</span></div>
+          <div class="bar-row"><span class="label">Kestabilan</span><div class="track"><div class="fill" style="width:71%"></div></div><span class="val">71</span></div>
+          <div class="bar-row"><span class="label">Kepemimpinan</span><div class="track"><div class="fill" style="width:58%"></div></div><span class="val">58</span></div>
+          <p class="report-note">*Data ilustratif untuk contoh tampilan laporan, bukan hasil tes sungguhan.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="cerita">
+      <div class="section-head">
+        <h2>Dipercaya individu maupun institusi</h2>
+      </div>
+      <div class="testimonials">
+        <div class="t-card b2c">
+          <span class="badge">Individu · contoh ilustrasi</span>
+          <p class="quote">"Awalnya cuma penasaran skor IQ, ternyata laporannya bantu saya paham cara belajar yang cocok. Semua online, nggak perlu telepon-telepon dulu."</p>
+          <div class="who"><span class="av"></span><span><b>Dinda</b>, mahasiswa, Medan</span></div>
+        </div>
+        <div class="t-card b2c">
+          <span class="badge">Orang Tua · contoh ilustrasi</span>
+          <p class="quote">"Tes minat bakat buat anak saya kelas 12 hasilnya detail banget, jadi lebih tenang milih jurusan kuliah."</p>
+          <div class="who"><span class="av"></span><span><b>Pak Rudi</b>, orang tua siswa</span></div>
+        </div>
+        <div class="t-card b2b">
+          <span class="badge">Institusi · testimoni nyata</span>
+          <p class="quote">"Asesmen psikologis dari Ekspresi akurat dan membantu tim HR kami menemukan kandidat yang tepat."</p>
+          <div class="who"><span class="av"></span><span><b>Manajer HR</b>, klien korporat</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B2B STRIP SECTION -->
+    <section id="institusi">
+      <div class="b2b-strip">
+        <div>
+          <h3>Butuh asesmen untuk sekolah atau perusahaanmu?</h3>
+          <p>Program EVOLVE, REFLECT, INSIGHT, dan COLLECTIVE — dirancang bersama tim konsultan untuk kebutuhan organisasi, bukan paket satuan.</p>
+        </div>
+        <a class="btn btn-header" href="#">Jadwalkan Konsultasi →</a>
+      </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="final-cta">
+      <span class="eyebrow" style="color:var(--accent); background:var(--accent-soft); padding:5px 14px; border-radius:999px; font-size:0.75rem; font-weight:700;">● Mulai dalam 5 menit</span>
+      <h2 style="margin-top:18px;">Tes pertamamu bisa dimulai sekarang, bukan minggu depan.</h2>
+      <p>Tidak perlu proposal, tidak perlu menunggu balasan email — pilih tes, bayar, dan kerjakan.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-header" href="#tes">Mulai Tes Pertamamu →</a>
+      </div>
+    </section>
+
+    <!-- FOOTER SITE -->
+    <footer class="site">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <img src="assets/brand_logo.png" alt="Ekspresi" style="height:32px;width:auto;flex-shrink:0;">
+        <span>© 2026 PT. Ekspresi Konsultama Indonesia — Medan</span>
+      </div>
+      <nav>
+        <a href="#tes">Tes &amp; Asesmen</a>
+        <a href="#tim">Tim Kami</a>
+        <a href="#institusi">Untuk Institusi</a>
+        <a href="#">Kebijakan Privasi</a>
+      </nav>
+    </footer>
+
+  </div>
+
+</body>
+</html>
