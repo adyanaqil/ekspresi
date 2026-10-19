@@ -71,6 +71,12 @@
       margin-inline: auto;
       gap: 16px 24px;
       background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(231, 231, 238, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     .brand {
@@ -133,6 +139,7 @@
 
     .btn-header:hover {
       background: #0000b3;
+      transform: translateY(-1px);
     }
 
     .btn-hero-primary {
@@ -142,6 +149,7 @@
 
     .btn-hero-primary:hover {
       background: #f0f0f8;
+      transform: translateY(-2px);
     }
 
     .btn-hero-outline {
@@ -244,17 +252,17 @@
       font-weight: bold;
     }
 
-    /* ---------- PATH CARDS ---------- */
+    /* ---------- PATH CARDS (CATEGORY SECTION) ---------- */
     .paths-wrapper {
       margin-top: clamp(24px, 4vw, 36px);
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 20px;
       position: relative;
       z-index: 3;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 860px) {
       .paths-wrapper { grid-template-columns: 1fr; }
     }
 
@@ -262,12 +270,13 @@
       background: var(--bg-raise);
       border: 1px solid var(--line);
       border-radius: 20px;
-      padding: 26px 28px;
+      padding: 28px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       box-shadow: 0 12px 32px -16px rgba(15, 18, 74, 0.12);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
     }
 
     .path-card:hover {
@@ -275,28 +284,76 @@
       box-shadow: 0 16px 36px -12px rgba(15, 18, 74, 0.18);
     }
 
-    .path-card .tag {
+    .path-card.featured-anxiety {
+      border: 2px solid var(--primary);
+      background: linear-gradient(180deg, #ffffff 0%, #f9f9ff 100%);
+    }
+
+    .path-card .tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      width: fit-content;
     }
 
-    .path-card.individu .tag { color: var(--tertiary); }
-    .path-card.institusi .tag { color: #000080; }
+    .path-card.featured-anxiety .tag-badge {
+      color: var(--primary);
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-soft-line);
+    }
+
+    .path-card.institusi .tag-badge {
+      color: var(--ink-soft);
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+    }
 
     .path-card h3 {
-      font-size: 1.35rem;
-      font-weight: 600;
+      font-size: 1.45rem;
+      font-weight: 700;
       color: #000080;
+      letter-spacing: -0.01em;
     }
 
     .path-card p {
       margin: 0;
       color: var(--ink-soft);
-      font-size: 0.94rem;
+      font-size: 0.95rem;
       line-height: 1.55;
       flex-grow: 1;
+    }
+
+    .path-card .meta-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .path-card .meta-pills span {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      background: #ffffff;
+      border: 1px solid var(--line);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .path-card .btn-card-action {
+      margin-top: 10px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      width: fit-content;
     }
 
     .path-card .go {
@@ -307,10 +364,8 @@
       align-items: center;
       gap: 6px;
       text-decoration: none;
+      color: #000080;
     }
-
-    .path-card.individu .go { color: var(--tertiary); }
-    .path-card.institusi .go { color: #000080; }
 
     /* ---------- PARTNERSHIP LOGOS STRIP ---------- */
     .partnership-section {
@@ -410,102 +465,9 @@
       line-height: 1.55;
     }
 
-    /* ---------- CATALOG ---------- */
-    .catalog {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    @media (max-width: 920px) { .catalog { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 620px) { .catalog { grid-template-columns: 1fr; } }
-
-    .test-card {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      background: var(--bg-raise);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
-    .test-card .icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--tertiary-soft);
-      color: var(--tertiary);
-      flex-shrink: 0;
-    }
-
-    .test-card h3 {
-      font-size: 1.12rem;
-      font-weight: 600;
-      font-family: "Plus Jakarta Sans", sans-serif;
-      color: #000080;
-    }
-
-    .test-card .meta {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      font-size: 0.78rem;
-      color: var(--ink-faint);
-    }
-
-    .test-card .meta span {
-      background: var(--bg-alt);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 3px 10px;
-    }
-
-    .test-card .desc {
-      font-size: 0.92rem;
-      color: var(--ink-soft);
-      line-height: 1.5;
-      flex-grow: 1;
-    }
-
-    .test-card .foot {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 12px;
-      border-top: 1px dashed var(--line);
-    }
-
-    .price {
-      font-family: "IBM Plex Mono", monospace;
-      font-weight: 600;
-      font-size: 0.98rem;
-      color: #000080;
-    }
-
-    .price small {
-      display: block;
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-weight: 400;
-      color: var(--ink-faint);
-      font-size: 0.7rem;
-    }
-
-    .mini-btn {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--tertiary);
-      text-decoration: none;
-    }
-
     /* ---------- SECTION TENAGA PROFESIONAL KAMI ---------- */
     .team-section {
       padding-block: clamp(48px, 6vw, 76px);
-      border-top: 1px solid var(--line);
     }
 
     .team-header {
@@ -710,20 +672,318 @@
     .t-card.b2c .badge { color: var(--tertiary); }
     .t-card.b2b .badge { color: #000080; }
 
-    /* ---------- B2B STRIP & FOOTER ---------- */
-    .b2b-strip {
+    /* ---------- SECTION INSTITUSI (B2B) BESAR & PREMIUM ---------- */
+    .b2b-section {
+      padding-block: clamp(56px, 7vw, 90px);
+      border-top: 1px solid var(--line);
+      background: linear-gradient(180deg, #f8f9fd 0%, #ffffff 100%);
+      border-radius: 28px;
+      margin-block: 40px 20px;
+      padding-inline: clamp(20px, 4vw, 44px);
+      border: 1px solid var(--line);
+    }
+
+    .b2b-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #000080;
+      background: rgba(0, 0, 128, 0.08);
+      border: 1px solid rgba(0, 0, 128, 0.16);
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .b2b-badge .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #000080;
+    }
+
+    .b2b-header-wrap {
+      max-width: 780px;
+      margin-bottom: 36px;
+    }
+
+    .b2b-header-wrap h2 {
+      font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+      font-weight: 700;
+      color: #000080;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .b2b-header-wrap p {
+      font-size: 1.02rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      margin-top: 14px;
+    }
+
+    .b2b-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+    }
+
+    @media (max-width: 860px) {
+      .b2b-stats-bar { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .b2b-stats-bar { grid-template-columns: 1fr; }
+    }
+
+    .b2b-stat-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .b2b-stat-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--primary-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000080;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .b2b-stat-info strong {
+      display: block;
+      font-size: 0.94rem;
+      color: var(--ink);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .b2b-stat-info span {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      margin-top: 3px;
+    }
+
+    .b2b-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-bottom: 36px;
+    }
+
+    @media (max-width: 768px) {
+      .b2b-grid { grid-template-columns: 1fr; }
+    }
+
+    .b2b-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 6px 20px -8px rgba(0, 0, 80, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      position: relative;
+    }
+
+    .b2b-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px -12px rgba(0, 0, 128, 0.12);
+      border-color: #c7cbdf;
+    }
+
+    .b2b-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .b2b-card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: var(--primary-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+    }
+
+    .b2b-card-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--tertiary-soft);
+      color: var(--tertiary);
+    }
+
+    .b2b-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #000080;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .b2b-card h3 span.code-tag {
+      font-size: 0.78rem;
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--tertiary);
+      font-weight: 600;
+      background: #eff0fe;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .b2b-card p.desc {
+      font-size: 0.93rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .b2b-card ul.features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .b2b-card ul.features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    .b2b-card ul.features li::before {
+      content: "✓";
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #eef2ff;
+      color: #000080;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .b2b-cta-banner {
+      background: linear-gradient(135deg, #0d0e34 0%, #000080 100%);
+      color: #ffffff;
+      border-radius: 22px;
+      padding: clamp(26px, 4vw, 38px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 24px;
+      gap: 28px;
       flex-wrap: wrap;
-      background: var(--primary-soft);
-      border: 1px solid var(--primary-soft-line);
-      border-radius: 22px;
-      padding: 32px clamp(22px, 4vw, 40px);
+      box-shadow: 0 16px 36px -12px rgba(13, 14, 52, 0.35);
+      margin-top: 10px;
     }
-    .b2b-strip h3 { font-size: 1.3rem; max-width: 24ch; color: #000080; }
-    .b2b-strip p { color: var(--ink-soft); max-width: 40ch; margin: 8px 0 0; line-height: 1.5; }
+
+    .b2b-cta-text {
+      max-width: 620px;
+    }
+
+    .b2b-cta-text h3 {
+      font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .b2b-cta-text p {
+      font-size: 0.94rem;
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .b2b-cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 270px;
+    }
+
+    .b2b-cta-actions .btn-cta-main {
+      background: #ffffff;
+      color: #000080;
+      font-weight: 700;
+      padding: 13px 22px;
+      border-radius: 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      font-size: 0.94rem;
+    }
+
+    .b2b-cta-actions .btn-cta-main:hover {
+      background: #f0f0f8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .b2b-cta-actions .btn-cta-sub {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      font-weight: 600;
+      padding: 11px 20px;
+      border-radius: 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      transition: all 0.2s ease;
+    }
+
+    .b2b-cta-actions .btn-cta-sub:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
 
     .final-cta { text-align: center; padding-block: clamp(56px, 8vw, 96px); }
     .final-cta h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); max-width: 22ch; margin-inline: auto; color: #000080; }
@@ -755,14 +1015,14 @@
     </div>
     <nav class="primary">
       <a href="#tentang">Tentang</a>
-      <a href="#tes">Tes &amp; Asesmen</a>
+      <a href="tes-kecemasan.html">Tes Kecemasan</a>
+      <a href="tes-kecemasan.html#konseling">Tempat Konseling</a>
       <a href="#tim">Tim Kami</a>
-      <a href="#hasil">Contoh Hasil</a>
       <a href="#cerita">Cerita Pengguna</a>
       <a href="#institusi">Untuk Institusi</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn btn-header" href="#tes">Mulai Tes ↗</a>
+      <a class="btn btn-header" href="tes-kecemasan.html">Cek Kecemasan ↗</a>
     </div>
   </header>
 
@@ -772,34 +1032,46 @@
     <div class="hero-container">
       <div class="hero-content">
         <span class="hero-badge">
-          <span class="dot"></span> PSIKOTES &amp; TES IQ ONLINE
+          <span class="dot"></span> PSIKOTES &amp; SCREENING KESEHATAN MENTAL
         </span>
         <h1>Kenali potensimu,<br>mulai dari tes<br>yang tepat.</h1>
-        <p class="lede">Tes psikologi yang disusun psikolog berlisensi HIMPSI, bisa kamu mulai sendiri hari ini — hasil jelas, harga jelas, tanpa perlu menghubungi siapa pun dulu.</p>
+        <p class="lede">Layanan psikologis yang disusun psikolog berlisensi HIMPSI. Cek tingkat kecemasanmu secara mandiri hari ini — hasil jelas, cepat, dan terhubung langsung ke layanan konseling terpercaya.</p>
         
         <div class="hero-ctas">
-          <a class="btn btn-hero-primary" href="#tes">Lihat Semua Tes →</a>
-          <a class="btn btn-hero-outline" href="#hasil">Lihat Contoh Hasil</a>
+          <a class="btn btn-hero-primary" href="tes-kecemasan.html">Cek Tingkat Kecemasanmu →</a>
+          <a class="btn btn-hero-outline" href="tes-kecemasan.html#konseling">Layanan Konseling</a>
         </div>
 
         <div class="hero-meta-note">
-          <span class="dots-icon">•••</span> Diawasi psikolog berlisensi HIMPSI · hasil bisa diunduh
+          <span class="dots-icon">•••</span> Diawasi psikolog berlisensi HIMPSI · hasil privat &amp; instan
         </div>
       </div>
     </div>
 
-    <!-- PATH CARDS (OVERLAPPING BELOW HERO) -->
+    <!-- SECTION KATEGORI LAYANAN / AUDIENS (DENGAN KARTU TES KECEMASAN UTAMA) -->
     <div class="paths-wrapper">
-      <div class="path-card individu">
-        <span class="tag">UNTUK INDIVIDU &amp; KELUARGA</span>
-        <h3>Tes untuk kamu, anak, atau pasanganmu</h3>
-        <p>Tes IQ, minat bakat, kepribadian, dan kesiapan sekolah — kerjakan online, hasil dan rekomendasi langsung bisa diunduh.</p>
-        <a class="go" href="#tes">Pilih tes individu →</a>
+      <!-- Card 1: Fokus Utama Tes Kecemasan -->
+      <div class="path-card featured-anxiety">
+        <span class="tag-badge">UNTUK INDIVIDU &amp; KELUARGA · SCREENING MANDIRI</span>
+        <h3>Cek tingkat kecemasanmu</h3>
+        <p>Kenali kondisi mental dan tingkat kecemasanmu saat ini melalui tes screening psikologis terstandar (GAD-7). Hanya 3 menit, hasil langsung keluar, dan terhubung ke opsi konseling online maupun tatap muka.</p>
+        <div class="meta-pills">
+          <span>7 Pertanyaan Singkat</span>
+          <span>Hasil &amp; Analisis Instan</span>
+          <span>Privat &amp; Terpercaya</span>
+        </div>
+        <a class="btn btn-header btn-card-action" href="tes-kecemasan.html">Mulai Tes Kecemasan →</a>
       </div>
+
+      <!-- Card 2: Untuk Sekolah & Perusahaan -->
       <div class="path-card institusi">
-        <span class="tag">UNTUK SEKOLAH &amp; PERUSAHAAN</span>
+        <span class="tag-badge">UNTUK SEKOLAH &amp; PERUSAHAAN</span>
         <h3>Asesmen &amp; program untuk timmu</h3>
-        <p>Rekrutmen, pemetaan talenta, pelatihan EVOLVE, konseling REFLECT — dikerjakan bersama tim konsultan Ekspresi.</p>
+        <p>Rekrutmen massal, pemetaan talenta, pelatihan EVOLVE, konseling karyawan REFLECT — dikerjakan bersama tim konsultan psikologi Ekspresi.</p>
+        <div class="meta-pills">
+          <span>Kustomisasi Organisasi</span>
+          <span>Laporan Mendalam</span>
+        </div>
         <a class="go" href="#institusi">Jadwalkan konsultasi →</a>
       </div>
     </div>
@@ -846,47 +1118,7 @@
       </div>
     </div>
 
-    <!-- CATALOG SECTION -->
-    <section id="tes">
-      <div class="section-head">
-        <h2>Pilih tes yang sesuai kebutuhanmu</h2>
-        <p>Semua tes dikembangkan dan diawasi psikolog berlisensi. Hasil langsung dapat diunduh begitu selesai pengerjaan.</p>
-      </div>
-      <div class="catalog">
-        <div class="test-card">
-          <span class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4.3"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/></svg></span>
-          <h3>Tes IQ Standar</h3>
-          <div class="meta"><span>Usia 12+</span><span>60 menit</span><span>Online</span></div>
-          <p class="desc">Mengukur kemampuan logika, numerik, dan spasial dengan norma yang disesuaikan populasi Indonesia.</p>
-          <div class="foot">
-            <div class="price mono">Rp150rb<small>mulai dari*</small></div>
-            <a class="mini-btn" href="#">Mulai Tes →</a>
-          </div>
-        </div>
-        <div class="test-card">
-          <span class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M15 9.2l-2.1 4.9-4.9 2.1 2.1-4.9z"/></svg></span>
-          <h3>Tes Minat &amp; Bakat</h3>
-          <div class="meta"><span>Usia 15–18</span><span>45 menit</span><span>Online</span></div>
-          <p class="desc">Bantu siswa SMA menentukan jurusan kuliah berdasarkan minat, bakat, dan potensi karier.</p>
-          <div class="foot">
-            <div class="price mono">Rp175rb<small>mulai dari*</small></div>
-            <a class="mini-btn" href="#">Mulai Tes →</a>
-          </div>
-        </div>
-        <div class="test-card">
-          <span class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2l8.5 4.65-8.5 4.65-8.5-4.65L12 3.2z"/><path d="M3.5 13.5l8.5 4.65 8.5-4.65"/></svg></span>
-          <h3>Tes Kepribadian</h3>
-          <div class="meta"><span>Dewasa</span><span>30 menit</span><span>Online</span></div>
-          <p class="desc">Memahami pola kerja, komunikasi, dan pengambilan keputusanmu untuk pengembangan diri atau karier.</p>
-          <div class="foot">
-            <div class="price mono">Rp120rb<small>mulai dari*</small></div>
-            <a class="mini-btn" href="#">Mulai Tes →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION TENAGA PROFESIONAL KAMI (BELOW #TES) -->
+    <!-- SECTION TENAGA PROFESIONAL KAMI -->
     <div id="tim" class="team-section">
       <div class="team-header">
         <div>
@@ -937,26 +1169,26 @@
       </div>
     </div>
 
-    <!-- REPORT SAMPLE SECTION -->
+    <!-- SAMPLE REPORT SECTION -->
     <section id="hasil">
       <div class="report">
         <div class="report-copy">
           <span class="eyebrow" style="color:var(--tertiary); background:var(--tertiary-soft); border:1px solid var(--tertiary-soft-line); padding:5px 12px; border-radius:999px; font-size:0.75rem; font-weight:700;">● Bukan kotak hitam</span>
           <h2 style="margin-top:16px;">Kamu tahu persis apa yang kamu bayar</h2>
-          <p>Setiap tes menghasilkan laporan yang bisa dibaca sendiri — bukan angka mentah tanpa konteks. Dijelaskan dengan bahasa yang mudah dipahami, ditinjau oleh psikolog berlisensi sebelum dikirim ke kamu.</p>
+          <p>Setiap tes dan asesmen menghasilkan laporan yang dapat dipahami sendiri — bukan angka mentah tanpa konteks. Dijelaskan dengan bahasa yang lugas, ditinjau oleh psikolog berlisensi sebelum dikirim ke kamu.</p>
           <ul class="report-checks">
-            <li>Skor per dimensi dengan penjelasan singkat</li>
-            <li>Rekomendasi langkah lanjutan yang konkret</li>
-            <li>PDF bisa diunduh &amp; disimpan selamanya</li>
+            <li>Skor per dimensi dengan penjelasan konkret</li>
+            <li>Rekomendasi langkah tindak lanjut yang tepat</li>
+            <li>PDF tersimpan aman dan dapat diunduh kapan saja</li>
           </ul>
         </div>
         <div class="report-card">
-          <div class="rhead"><b>Contoh Laporan — Tes Kepribadian</b><span>SAMPEL</span></div>
-          <div class="bar-row"><span class="label">Analitis</span><div class="track"><div class="fill" style="width:82%"></div></div><span class="val">82</span></div>
-          <div class="bar-row"><span class="label">Komunikasi</span><div class="track"><div class="fill" style="width:64%"></div></div><span class="val">64</span></div>
-          <div class="bar-row"><span class="label">Kestabilan</span><div class="track"><div class="fill" style="width:71%"></div></div><span class="val">71</span></div>
-          <div class="bar-row"><span class="label">Kepemimpinan</span><div class="track"><div class="fill" style="width:58%"></div></div><span class="val">58</span></div>
-          <p class="report-note">*Data ilustratif untuk contoh tampilan laporan, bukan hasil tes sungguhan.</p>
+          <div class="rhead"><b>Contoh Laporan — Profil Psikologis</b><span>SAMPEL</span></div>
+          <div class="bar-row"><span class="label">Regulasi Diri</span><div class="track"><div class="fill" style="width:84%"></div></div><span class="val">84</span></div>
+          <div class="bar-row"><span class="label">Koping Stres</span><div class="track"><div class="fill" style="width:68%"></div></div><span class="val">68</span></div>
+          <div class="bar-row"><span class="label">Ketahanan</span><div class="track"><div class="fill" style="width:72%"></div></div><span class="val">72</span></div>
+          <div class="bar-row"><span class="label">Kestabilan</span><div class="track"><div class="fill" style="width:60%"></div></div><span class="val">60</span></div>
+          <p class="report-note">*Data ilustratif untuk contoh tampilan laporan psikologis.</p>
         </div>
       </div>
     </section>
@@ -968,41 +1200,172 @@
       </div>
       <div class="testimonials">
         <div class="t-card b2c">
-          <span class="badge">Individu · contoh ilustrasi</span>
-          <p class="quote">"Awalnya cuma penasaran skor IQ, ternyata laporannya bantu saya paham cara belajar yang cocok. Semua online, nggak perlu telepon-telepon dulu."</p>
-          <div class="who"><span class="av"></span><span><b>Dinda</b>, mahasiswa, Medan</span></div>
+          <span class="badge">Individu · Klien Konseling</span>
+          <p class="quote">"Setelah cek kecemasan dan ikut sesi konseling online dengan psikolog Ekspresi, saya jadi paham pemicu overthinking saya dan punya teknik grounding yang sangat membantu."</p>
+          <div class="who"><span class="av"></span><span><b>Dinda</b>, Klien Konseling, Medan</span></div>
         </div>
         <div class="t-card b2c">
-          <span class="badge">Orang Tua · contoh ilustrasi</span>
-          <p class="quote">"Tes minat bakat buat anak saya kelas 12 hasilnya detail banget, jadi lebih tenang milih jurusan kuliah."</p>
-          <div class="who"><span class="av"></span><span><b>Pak Rudi</b>, orang tua siswa</span></div>
+          <span class="badge">Orang Tua · Siswa SMA</span>
+          <p class="quote">"Anak saya sempat cemas menghadapi ujian masuk kuliah. Pendampingan psikolog di sini sangat ramah dan membuat dia jauh lebih tenang dan percaya diri."</p>
+          <div class="who"><span class="av"></span><span><b>Pak Rudi</b>, Orang Tua Siswa</span></div>
         </div>
         <div class="t-card b2b">
-          <span class="badge">Institusi · testimoni nyata</span>
-          <p class="quote">"Asesmen psikologis dari Ekspresi akurat dan membantu tim HR kami menemukan kandidat yang tepat."</p>
-          <div class="who"><span class="av"></span><span><b>Manajer HR</b>, klien korporat</span></div>
+          <span class="badge">Institusi · Testimoni Nyata</span>
+          <p class="quote">"Asesmen dan pendampingan psikologis dari Ekspresi sangat profesional, akurat, dan membantu peningkatan kesehatan mental tim kerja kami."</p>
+          <div class="who"><span class="av"></span><span><b>Manajer HR</b>, Klien Korporat</span></div>
         </div>
       </div>
     </section>
 
-    <!-- B2B STRIP SECTION -->
-    <section id="institusi">
-      <div class="b2b-strip">
-        <div>
-          <h3>Butuh asesmen untuk sekolah atau perusahaanmu?</h3>
-          <p>Program EVOLVE, REFLECT, INSIGHT, dan COLLECTIVE — dirancang bersama tim konsultan untuk kebutuhan organisasi, bukan paket satuan.</p>
+    <!-- SECTION UNTUK INSTITUSI & KORPORAT (B2B) -->
+    <section id="institusi" class="b2b-section">
+      <div class="b2b-header-wrap">
+        <span class="b2b-badge">
+          <span class="badge-dot"></span> Solusi Institusi, Sekolah &amp; Korporat
+        </span>
+        <h2>Layanan Kesehatan Mental &amp; Asesmen Terintegrasi untuk Organisasi</h2>
+        <p>
+          Kami mendampingi perusahaan, instansi pendidikan, fasilitas kesehatan, dan institusi publik menciptakan lingkungan kerja serta belajar yang produktif, resilien, dan sehat secara psikologis dengan intervensi berbasis riset.
+        </p>
+      </div>
+
+      <!-- CREDIBILITY / STATS HIGHLIGHTS -->
+      <div class="b2b-stats-bar">
+        <div class="b2b-stat-item">
+          <div class="b2b-stat-icon">🏛️</div>
+          <div class="b2b-stat-info">
+            <strong>Lintas Sektor</strong>
+            <span>Pendidikan, Medis &amp; Industri</span>
+          </div>
         </div>
-        <a class="btn btn-header" href="#">Jadwalkan Konsultasi →</a>
+        <div class="b2b-stat-item">
+          <div class="b2b-stat-icon">📜</div>
+          <div class="b2b-stat-info">
+            <strong>Standar HIMPSI</strong>
+            <span>Laporan psikogram berlisensi</span>
+          </div>
+        </div>
+        <div class="b2b-stat-item">
+          <div class="b2b-stat-icon">🎯</div>
+          <div class="b2b-stat-info">
+            <strong>Tailored Programs</strong>
+            <span>Kustomisasi sesuai tujuan tim</span>
+          </div>
+        </div>
+        <div class="b2b-stat-item">
+          <div class="b2b-stat-icon">🔒</div>
+          <div class="b2b-stat-info">
+            <strong>100% Confidential</strong>
+            <span>Etika &amp; privasi data terjamin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 PROGRAM UTAMA EKSPRESI -->
+      <div class="b2b-grid">
+        <!-- 1. INSIGHT -->
+        <div class="b2b-card">
+          <div>
+            <div class="b2b-card-top">
+              <div class="b2b-card-icon">📊</div>
+              <span class="b2b-card-pill">Asesmen &amp; Rekrutmen</span>
+            </div>
+            <h3>INSIGHT <span class="code-tag">Asesmen Talenta</span></h3>
+            <p class="desc">
+              Pemeriksaan psikologis komprehensif untuk seleksi karyawan baru, promosi jabatan, pemetaan talenta (talent mapping), serta penjurusan minat-bakat siswa.
+            </p>
+            <ul class="features">
+              <li>Laporan psikogram terstandar dengan rekomendasi objektif &amp; actionable</li>
+              <li>Asesmen potensi intelektual (IQ), kepribadian, gaya kerja &amp; integritas</li>
+              <li>Tersedia metode Online terawasi maupun On-site langsung di lokasi instansi</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. EVOLVE -->
+        <div class="b2b-card">
+          <div>
+            <div class="b2b-card-top">
+              <div class="b2b-card-icon">💡</div>
+              <span class="b2b-card-pill">Pelatihan &amp; Workshop</span>
+            </div>
+            <h3>EVOLVE <span class="code-tag">Capacity Building</span></h3>
+            <p class="desc">
+              Pelatihan interaktif dan webinar berbasis psikologi untuk meningkatkan resiliensi staf, manajemen stres kerja, pencegahan burnout, serta kepemimpinan empatik.
+            </p>
+            <ul class="features">
+              <li>Materi aplikatif dipandu langsung oleh psikolog &amp; konsultan berpengalaman</li>
+              <li>Simulasi kasus riil dan praktik teknik regulasi emosi di lingkungan kerja</li>
+              <li>Modul dapat disesuaikan untuk guru, staf pelaksana, hingga level manajerial</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. REFLECT -->
+        <div class="b2b-card">
+          <div>
+            <div class="b2b-card-top">
+              <div class="b2b-card-icon">🤝</div>
+              <span class="b2b-card-pill">Employee Assistance</span>
+            </div>
+            <h3>REFLECT <span class="code-tag">Konseling Organisasi</span></h3>
+            <p class="desc">
+              Fasilitas konseling privat (Employee &amp; Student Assistance Program) bagi anggota tim yang menghadapi beban psikologis, stres kerja, atau tantangan personal.
+            </p>
+            <ul class="features">
+              <li>Akses konseling fleksibel via Video Call Online atau Tatap Muka langsung</li>
+              <li>Membantu menekan angka absensi karyawan dan meningkatkan retensi talenta</li>
+              <li>Privasi klien 100% terlindungi sesuai kode etik psikolog profesional</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4. COLLECTIVE -->
+        <div class="b2b-card">
+          <div>
+            <div class="b2b-card-top">
+              <div class="b2b-card-icon">🌱</div>
+              <span class="b2b-card-pill">Budaya &amp; Iklim Tim</span>
+            </div>
+            <h3>COLLECTIVE <span class="code-tag">Well-Being Audit</span></h3>
+            <p class="desc">
+              Audit menyeluruh untuk memetakan iklim psikologis, tingkat kepuasan kerja, dan dinamika tim organisasi guna menyusun intervensi manajerial yang presisi.
+            </p>
+            <ul class="features">
+              <li>Survei psikometri organisasi &amp; Focus Group Discussion (FGD) mendalam</li>
+              <li>Laporan indeks kesehatan mental tim dan peta deteksi dini risiko burnout</li>
+              <li>Rekomendasi strategis perbaikan budaya kerja dan engagement tim</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA BANNER KONSULTASI INSTITUSI -->
+      <div class="b2b-cta-banner">
+        <div class="b2b-cta-text">
+          <h3>Rancang Program Kesehatan Mental yang Tepat untuk Organisasi Anda</h3>
+          <p>
+            Diskusikan kebutuhan spesifik tim Anda bersama konsultan kami. Kami siap menyusun rancangan program, silabus pelatihan, atau penawaran resmi yang disesuaikan dengan skala institusi Anda.
+          </p>
+        </div>
+        <div class="b2b-cta-actions">
+          <a class="btn-cta-main" href="https://wa.me/6281265429073?text=Halo%20Ekspresi,%20saya%20tertarik%20berdiskusi%20mengenai%20program%20kesehatan%20mental%20dan%20asesmen%20untuk%20organisasi%2Fperusahaan%20kami." target="_blank">
+            💬 Konsultasi via WhatsApp →
+          </a>
+          <a class="btn-cta-sub" href="mailto:info.ekspresi@gmail.com?subject=Permintaan%20Informasi%20Program%20Institusi%20Ekspresi">
+            ✉️ Kirim Permintaan Proposal
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- FINAL CTA SECTION -->
     <section class="final-cta">
-      <span class="eyebrow" style="color:var(--accent); background:var(--accent-soft); padding:5px 14px; border-radius:999px; font-size:0.75rem; font-weight:700;">● Mulai dalam 5 menit</span>
-      <h2 style="margin-top:18px;">Tes pertamamu bisa dimulai sekarang, bukan minggu depan.</h2>
-      <p>Tidak perlu proposal, tidak perlu menunggu balasan email — pilih tes, bayar, dan kerjakan.</p>
+      <span class="eyebrow" style="color:var(--accent); background:var(--accent-soft); padding:5px 14px; border-radius:999px; font-size:0.75rem; font-weight:700;">● Mulai dalam 3 menit</span>
+      <h2 style="margin-top:18px;">Ketahui kondisi kecemasanmu hari ini dengan jelas.</h2>
+      <p>Tidak perlu menunda kesehatan mentalmu — kerjakan screening gratis, dapatkan skor langsung, dan temukan dukungan yang tepat.</p>
       <div class="hero-ctas">
-        <a class="btn btn-header" href="#tes">Mulai Tes Pertamamu →</a>
+        <a class="btn btn-header" href="tes-kecemasan.html">Cek Tingkat Kecemasanmu Sekarang →</a>
       </div>
     </section>
 
@@ -1010,13 +1373,13 @@
     <footer class="site">
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
         <img src="assets/brand_logo.png" alt="Ekspresi" style="height:32px;width:auto;flex-shrink:0;">
-        <span>© 2026 PT. Ekspresi Konsultama Indonesia — Medan</span>
+        <span>© 2026 PT. Ekspresi Konsultama Indonesia — 0812-6542-9073 · info.ekspresi@gmail.com · Jl. Karya Dame, Komplek Karya Quality No. 25B, Medan</span>
       </div>
       <nav>
-        <a href="#tes">Tes &amp; Asesmen</a>
+        <a href="tes-kecemasan.html">Tes Kecemasan</a>
+        <a href="tes-kecemasan.html#konseling">Tempat Konseling</a>
         <a href="#tim">Tim Kami</a>
         <a href="#institusi">Untuk Institusi</a>
-        <a href="#">Kebijakan Privasi</a>
       </nav>
     </footer>
 

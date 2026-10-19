@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tes Kecemasan Mandiri (GAD-7) — Ekspresi Consulting &amp; Research</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8f9fc;
+      --bg-card: #ffffff;
+      --ink: #0a0a0a;
+      --ink-soft: #52525f;
+      --ink-faint: #8b8b96;
+      --line: #e7e7ee;
+      --line-strong: #d3d3df;
+      --primary: #000080;
+      --primary-hover: #0000b3;
+      --primary-ink: #ffffff;
+      --primary-soft: #e8e8f7;
+      --primary-soft-line: #c7c7ea;
+      --accent: #e10600;
+      --accent-soft: #fde8e7;
+      --tertiary: #6b5bba;
+      --tertiary-soft: #ece9f8;
+      --shadow: 0 20px 45px -25px rgba(10, 10, 40, 0.12);
+      --success: #16a34a;
+      --success-soft: #dcfce7;
+      --warning: #d97706;
+      --warning-soft: #fef3c7;
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      padding-inline: clamp(16px, 4vw, 48px);
+      min-height: 100vh;
+    }
+
+    h1, h2, h3 {
+      font-family: "Fraunces", Georgia, serif;
+      text-wrap: balance;
+      margin: 0;
+    }
+
+    .mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1040px;
+      margin-inline: auto;
+    }
+
+    /* ---------- HEADER SITE ---------- */
+    header.site {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 16px;
+      max-width: 1040px;
+      margin-inline: auto;
+      gap: 16px 24px;
+      background: #ffffff;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(231, 231, 238, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      display: block;
+      height: 44px;
+      width: auto;
+    }
+
+    nav.primary {
+      display: flex;
+      gap: 24px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #333340;
+    }
+
+    nav.primary a {
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    nav.primary a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-header {
+      background: #000080;
+      color: #ffffff;
+    }
+
+    .btn-header:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 860px) {
+      nav.primary { display: none; }
+    }
+
+    /* ---------- BREADCRUMB / BACK LINK ---------- */
+    .back-nav {
+      margin-block: 10px 20px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--primary);
+    }
+
+    /* ---------- MAIN TEST CONTAINER ---------- */
+    .test-page-container {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: clamp(32px, 5vw, 60px) clamp(20px, 4vw, 48px);
+      box-shadow: 0 10px 36px -12px rgba(15, 18, 74, 0.08);
+      margin-bottom: 56px;
+    }
+
+    .test-header-wrap {
+      text-align: center;
+      max-width: 680px;
+      margin-inline: auto;
+      margin-bottom: 36px;
+    }
+
+    .test-header-wrap .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-soft-line);
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .test-header-wrap .badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .test-header-wrap h1 {
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      color: #000080;
+      font-weight: 700;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .test-header-wrap p {
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .quiz-inner-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: clamp(20px, 3.5vw, 36px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      max-width: 860px;
+      margin-inline: auto;
+    }
+
+    .quiz-instructions {
+      background: #f4f5fc;
+      border-left: 4px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: #2b2b3d;
+      margin-bottom: 28px;
+      line-height: 1.55;
+    }
+
+    .question-row {
+      padding-block: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .question-row:last-child {
+      border-bottom: none;
+    }
+
+    .question-text {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #0f124a;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 12px;
+      line-height: 1.45;
+    }
+
+    .question-text .num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--primary-soft);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-family: "IBM Plex Mono", monospace;
+      flex-shrink: 0;
+      font-weight: 600;
+      margin-top: 1px;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .option-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      background: #ffffff;
+      transition: all 0.2s ease;
+      min-height: 52px;
+      user-select: none;
+    }
+
+    .option-label input {
+      display: none;
+    }
+
+    .option-label:hover {
+      border-color: var(--primary);
+      background: #f8f8fd;
+    }
+
+    .option-label.selected {
+      border-color: var(--primary);
+      background: #000080;
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(0, 0, 128, 0.25);
+    }
+
+    .quiz-submit-wrap {
+      margin-top: 36px;
+      text-align: center;
+    }
+
+    /* ---------- RESULT BOX ---------- */
+    .anxiety-result-box {
+      display: none;
+      background: #ffffff;
+      border: 2px solid var(--primary);
+      border-radius: 24px;
+      padding: clamp(24px, 4vw, 40px);
+      box-shadow: 0 16px 45px -10px rgba(0, 0, 128, 0.18);
+      max-width: 860px;
+      margin-inline: auto;
+      margin-top: 36px;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-badge-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .score-pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.95rem;
+      font-weight: 700;
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      padding: 6px 14px;
+      border-radius: 999px;
+      color: #000080;
+    }
+
+    .category-pill {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    .category-pill.rendah { background: var(--success-soft); color: var(--success); }
+    .category-pill.ringan { background: var(--warning-soft); color: var(--warning); }
+    .category-pill.sedang { background: #fee2e2; color: #b91c1c; }
+    .category-pill.berat { background: #fef2f2; color: #991b1b; border: 1px solid #f87171; }
+
+    .result-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #000080;
+      margin-bottom: 12px;
+    }
+
+    .result-desc {
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      line-height: 1.65;
+      margin-bottom: 26px;
+    }
+
+    .result-next-step-box {
+      background: #f4f6fc;
+      border-radius: 16px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border: 1px solid var(--primary-soft-line);
+    }
+
+    .result-next-step-box p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #1e1e38;
+      font-weight: 500;
+      max-width: 50ch;
+    }
+
+    /* ---------- SECTION TEMPAT KONSELING (PASCA-TES) ---------- */
+    .counseling-section {
+      padding-block: clamp(40px, 6vw, 76px);
+      scroll-margin-top: 80px;
+    }
+
+    .counseling-header {
+      text-align: center;
+      max-width: 680px;
+      margin-inline: auto;
+      margin-bottom: 40px;
+    }
+
+    .counseling-header .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .counseling-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: #000080;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .counseling-header p {
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .counseling-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .counseling-grid { grid-template-columns: 1fr; }
+    }
+
+    .counseling-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: clamp(24px, 4vw, 36px);
+      background: #ffffff;
+      box-shadow: 0 8px 30px -10px rgba(15, 18, 74, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: all 0.25s ease;
+    }
+
+    .counseling-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px -12px rgba(0, 0, 128, 0.16);
+      border-color: var(--primary);
+    }
+
+    .counseling-badge-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .c-badge {
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .c-badge.online {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .c-badge.offline {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .counseling-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #000080;
+    }
+
+    .counseling-card .c-desc {
+      font-size: 0.94rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .c-benefits {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .c-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #2b2b3d;
+      line-height: 1.45;
+    }
+
+    .c-benefits li svg {
+      width: 18px;
+      height: 18px;
+      color: var(--success);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .counseling-location-note {
+      background: var(--bg-alt);
+      border: 1px dashed var(--line);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .counseling-location-note svg {
+      width: 16px;
+      height: 16px;
+      color: #000080;
+      flex-shrink: 0;
+    }
+
+    .c-foot {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .c-price {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #000080;
+    }
+
+    .c-price small {
+      display: block;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--ink-faint);
+    }
+
+    footer.site {
+      border-top: 1px solid var(--line);
+      padding-block: 30px;
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--ink-faint);
+      font-size: 0.84rem;
+    }
+    footer.site nav { display: flex; gap: 18px; }
+    footer.site a { text-decoration: none; }
+    footer.site a:hover { color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAVIGASI -->
+  <header class="site">
+    <div class="brand">
+      <a href="index.html">
+        <img src="assets/brand_logo.png" alt="Ekspresi Consulting &amp; Research">
+      </a>
+    </div>
+    <nav class="primary">
+      <a href="index.html">Beranda</a>
+      <a href="index.html#tentang">Tentang</a>
+      <a href="#konseling">Tempat Konseling</a>
+      <a href="index.html#tim">Tim Kami</a>
+      <a href="index.html#institusi">Untuk Institusi</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-header" href="https://wa.me/6281265429073?text=Halo%20Ekspresi,%20saya%20ingin%20konsultasi%20layanan%20psikologi." target="_blank">Konsultasi WA ↗</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <div class="back-nav">
+      <a href="index.html" class="back-link">
+        ← Kembali ke Halaman Utama
+      </a>
+    </div>
+
+    <!-- MAIN TEST CONTAINER -->
+    <div class="test-page-container">
+      <div class="test-header-wrap">
+        <span class="badge">
+          <span class="dot"></span> SCREENING MANDIRI CEPAT
+        </span>
+        <h1>Cek tingkat kecemasanmu</h1>
+        <p>Jawab 7 pertanyaan sederhana berikut berdasarkan apa yang kamu rasakan selama <strong>2 minggu terakhir</strong>. Tidak ada jawaban benar atau salah.</p>
+      </div>
+
+      <div class="quiz-inner-card">
+        <div class="quiz-instructions">
+          <strong>Petunjuk Pengerjaan:</strong> Pilih opsi frekuensi yang paling menggambarkan kondisimu dalam 2 minggu terakhir. Begitu selesai, kamu akan langsung melihat kategori kecemasan serta rekomendasi layanan konseling.
+        </div>
+
+        <form id="anxietyForm">
+          <!-- Question 1 -->
+          <div class="question-row">
+            <div class="question-text">
+              <span class="num">1</span>
+              <span>Merasa gugup, cemas, gelisah, atau tegang berlebihan?</span>
+            </div>
+            <div class="options-grid">
+              <label class="option-label" onclick="selectOption(this, 1)">
+                <input type="radio" name="q1" value="0" required>
+                <span>Tidak pernah</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 1)">
+                <input type="radio" name="q1" value="1">
+                <span>Beberapa hari</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 1)">
+                <input type="radio" name="q1" value="2">
+                <span>Lebih separuh waktu</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 1)">
+                <input type="radio" name="q1" value="3">
+                <span>Hampir tiap hari</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question-row">
+            <div class="question-text">
+              <span class="num">2</span>
+              <span>Tidak mampu menghentikan atau mengontrol rasa khawatir?</span>
+            </div>
+            <div class="options-grid">
+              <label class="option-label" onclick="selectOption(this, 2)">
+                <input type="radio" name="q2" value="0" required>
+                <span>Tidak pernah</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 2)">
+                <input type="radio" name="q2" value="1">
+                <span>Beberapa hari</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 2)">
+                <input type="radio" name="q2" value="2">
+                <span>Lebih separuh waktu</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 2)">
+                <input type="radio" name="q2" value="3">
+                <span>Hampir tiap hari</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="question-row">
+            <div class="question-text">
+              <span class="num">3</span>
+              <span>Terlalu mengkhawatirkan banyak hal yang berbeda secara terus-menerus?</span>
+            </div>
+            <div class="options-grid">
+              <label class="option-label" onclick="selectOption(this, 3)">
+                <input type="radio" name="q3" value="0" required>
+                <span>Tidak pernah</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 3)">
+                <input type="radio" name="q3" value="1">
+                <span>Beberapa hari</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 3)">
+                <input type="radio" name="q3" value="2">
+                <span>Lebih separuh waktu</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 3)">
+                <input type="radio" name="q3" value="3">
+                <span>Hampir tiap hari</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="question-row">
+            <div class="question-text">
+              <span class="num">4</span>
+              <span>Kesulitan untuk santai atau merasa tenang saat beristirahat?</span>
+            </div>
+            <div class="options-grid">
+              <label class="option-label" onclick="selectOption(this, 4)">
+                <input type="radio" name="q4" value="0" required>
+                <span>Tidak pernah</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 4)">
+                <input type="radio" name="q4" value="1">
+                <span>Beberapa hari</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 4)">
+                <input type="radio" name="q4" value="2">
+                <span>Lebih separuh waktu</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 4)">
+                <input type="radio" name="q4" value="3">
+                <span>Hampir tiap hari</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="question-row">
+            <div class="question-text">
+              <span class="num">5</span>
+              <span>Sangat gelisah sampai-sampai sulit untuk duduk diam?</span>
+            </div>
+            <div class="options-grid">
+              <label class="option-label" onclick="selectOption(this, 5)">
+                <input type="radio" name="q5" value="0" required>
+                <span>Tidak pernah</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 5)">
+                <input type="radio" name="q5" value="1">
+                <span>Beberapa hari</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 5)">
+                <input type="radio" name="q5" value="2">
+                <span>Lebih separuh waktu</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 5)">
+                <input type="radio" name="q5" value="3">
+                <span>Hampir tiap hari</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="question-row">
+            <div class="question-text">
+              <span class="num">6</span>
+              <span>Menjadi mudah jengkel, sensitif, atau lekas marah?</span>
+            </div>
+            <div class="options-grid">
+              <label class="option-label" onclick="selectOption(this, 6)">
+                <input type="radio" name="q6" value="0" required>
+                <span>Tidak pernah</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 6)">
+                <input type="radio" name="q6" value="1">
+                <span>Beberapa hari</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 6)">
+                <input type="radio" name="q6" value="2">
+                <span>Lebih separuh waktu</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 6)">
+                <input type="radio" name="q6" value="3">
+                <span>Hampir tiap hari</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 7 -->
+          <div class="question-row">
+            <div class="question-text">
+              <span class="num">7</span>
+              <span>Merasa takut seolah-olah sesuatu yang buruk akan segera terjadi?</span>
+            </div>
+            <div class="options-grid">
+              <label class="option-label" onclick="selectOption(this, 7)">
+                <input type="radio" name="q7" value="0" required>
+                <span>Tidak pernah</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 7)">
+                <input type="radio" name="q7" value="1">
+                <span>Beberapa hari</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 7)">
+                <input type="radio" name="q7" value="2">
+                <span>Lebih separuh waktu</span>
+              </label>
+              <label class="option-label" onclick="selectOption(this, 7)">
+                <input type="radio" name="q7" value="3">
+                <span>Hampir tiap hari</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="quiz-submit-wrap">
+            <button type="button" class="btn btn-header" onclick="calculateAnxietyScore()" style="padding:12px 34px; font-size:1rem;">
+              Lihat Hasil &amp; Rekomendasi Konseling →
+            </button>
+            <p id="validationWarning" style="color:#dc2626; font-size:0.88rem; margin-top:12px; display:none; font-weight:600;">
+              Mohon jawab semua pertanyaan terlebih dahulu sebelum melihat hasil.
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- BOX HASIL PASCA-TES -->
+      <div id="anxietyResultBox" class="anxiety-result-box">
+        <div class="result-badge-wrap">
+          <span class="score-pill" id="scorePill">Skor: 0 / 21</span>
+          <span class="category-pill" id="categoryPill">Kategori</span>
+        </div>
+        <div class="result-title" id="resultTitle">Tingkat Kecemasanmu</div>
+        <div class="result-desc" id="resultDesc">
+          Penjelasan klinis kondisi kecemasanmu akan tampil di sini.
+        </div>
+
+        <div class="result-next-step-box">
+          <div>
+            <p><strong>Langkah Lanjutan:</strong> Konseling bersama psikolog profesional dapat membantumu mengurai beban pikiran dan mendapatkan teknik penanganan yang tepat.</p>
+          </div>
+          <a href="#konseling" class="btn btn-header" onclick="smoothScrollToCounseling(event)">
+            Lanjut ke Tempat Konseling ↓
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION TEMPAT KONSELING (ONLINE & OFFLINE) -->
+    <section id="konseling" class="counseling-section">
+      <div class="counseling-header">
+        <span class="eyebrow">● Langkah Lanjutan Pasca-Tes</span>
+        <h2>Tempat Konseling</h2>
+        <p>Diskusikan hasil tesmu secara aman dan privat bersama psikolog berlisensi HIMPSI di Ekspresi. Pilih metode yang paling nyaman untukmu:</p>
+      </div>
+
+      <div class="counseling-grid">
+        <!-- Opsi 1: Konseling Online -->
+        <div class="counseling-card">
+          <div class="counseling-badge-wrap">
+            <span class="c-badge online">Paling Fleksibel</span>
+            <span style="font-size:1.4rem;">💻</span>
+          </div>
+          <h3>Konseling Online</h3>
+          <p class="c-desc">Sesi konsultasi 1-on-1 privat melalui video call (Google Meet/Zoom) dari kenyamanan rumahmu. Sangat cocok bagi kamu yang memiliki jadwal padat atau berada di luar kota Medan.</p>
+          
+          <ul class="c-benefits">
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Sesi 60 menit dengan psikolog berlisensi HIMPSI</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Privasi dan kerahasiaan data terjamin penuh</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Ringkasan evaluasi dan panduan praktis regulasi emosi</span>
+            </li>
+          </ul>
+
+          <div class="c-foot">
+            <div class="c-price">
+              Rp250rb
+              <small>per sesi 60 menit</small>
+            </div>
+            <a class="btn btn-header" id="btnKonselingOnline" href="https://wa.me/6281265429073?text=Halo%20Ekspresi,%20saya%20sudah%20selesai%20mengerjakan%20Tes%20Kecemasan%20di%20website%20dan%20ingin%20jadwalkan%20Konseling%20Online." target="_blank">
+              Jadwalkan Konseling Online →
+            </a>
+          </div>
+        </div>
+
+        <!-- Opsi 2: Konseling Offline (Tatap Muka) -->
+        <div class="counseling-card">
+          <div class="counseling-badge-wrap">
+            <span class="c-badge offline">Tatap Muka Langsung</span>
+            <span style="font-size:1.4rem;">🏢</span>
+          </div>
+          <h3>Konseling Offline (Tatap Muka)</h3>
+          <p class="c-desc">Bertemu dan berdiskusi langsung di ruang konseling privat yang tenang dan nyaman di kantor Ekspresi Medan. Sangat ideal untuk observasi menyeluruh, intervensi mendalam, dan kenyamanan bercerita.</p>
+          
+          <ul class="c-benefits">
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Konsultasi tatap muka intensif 60 menit</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Ruang privat kedap suara yang aman dan ramah</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Rencana pemulihan personal &amp; pendampingan berkala</span>
+            </li>
+          </ul>
+
+          <div class="counseling-location-note">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+            <span>Lokasi: Jl. Karya Dame, Komplek Karya Quality No. 25B, Medan</span>
+          </div>
+
+          <div class="c-foot">
+            <div class="c-price">
+              Rp350rb
+              <small>per sesi 60 menit di klinik</small>
+            </div>
+            <a class="btn btn-header" id="btnKonselingOffline" href="https://wa.me/6281265429073?text=Halo%20Ekspresi,%20saya%20sudah%20selesai%20mengerjakan%20Tes%20Kecemasan%20di%20website%20dan%20ingin%20jadwalkan%20Konseling%20Offline%20di%20Medan." target="_blank">
+              Jadwalkan Konseling Offline →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SITE -->
+    <footer class="site">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <img src="assets/brand_logo.png" alt="Ekspresi" style="height:30px;width:auto;flex-shrink:0;">
+        <span>© 2026 PT. Ekspresi Konsultama Indonesia — 0812-6542-9073 · info.ekspresi@gmail.com · Medan</span>
+      </div>
+      <nav>
+        <a href="index.html">Beranda</a>
+        <a href="#konseling">Tempat Konseling</a>
+        <a href="index.html#tim">Tim Kami</a>
+        <a href="index.html#institusi">Untuk Institusi</a>
+      </nav>
+    </footer>
+
+  </div>
+
+  <!-- SCRIPT LOGIKA TES KECEMASAN & ALUR KE TEMPAT KONSELING -->
+  <script>
+    function selectOption(labelEl, questionNum) {
+      const parentGrid = labelEl.closest('.options-grid');
+      parentGrid.querySelectorAll('.option-label').forEach(el => el.classList.remove('selected'));
+      labelEl.classList.add('selected');
+      const radioInput = labelEl.querySelector('input[type="radio"]');
+      if (radioInput) {
+        radioInput.checked = true;
+      }
+      document.getElementById('validationWarning').style.display = 'none';
+    }
+
+    function calculateAnxietyScore() {
+      const form = document.getElementById('anxietyForm');
+      const questions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7'];
+      let totalScore = 0;
+      let allAnswered = true;
+
+      for (let i = 0; i < questions.length; i++) {
+        const selected = form.querySelector(`input[name="${questions[i]}"]:checked`);
+        if (!selected) {
+          allAnswered = false;
+          break;
+        }
+        totalScore += parseInt(selected.value, 10);
+      }
+
+      if (!allAnswered) {
+        const warning = document.getElementById('validationWarning');
+        warning.style.display = 'block';
+        warning.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Evaluasi Kategori GAD-7
+      let category = '';
+      let categoryClass = '';
+      let title = '';
+      let description = '';
+
+      if (totalScore <= 4) {
+        category = 'Kecemasan Minimal / Rendah';
+        categoryClass = 'rendah';
+        title = 'Tingkat Kecemasanmu: Minimal / Rendah';
+        description = 'Skormu menunjukkan tingkat kecemasan yang tergolong minimal atau wajar dalam menghadapi dinamika harian. Pertahankan pola istirahat, olahraga teratur, dan luangkan waktu untuk kegiatan yang menenangkan pikiran.';
+      } else if (totalScore <= 9) {
+        category = 'Kecemasan Ringan';
+        categoryClass = 'ringan';
+        title = 'Tingkat Kecemasanmu: Ringan';
+        description = 'Kamu mengalami gejala kecemasan ringan yang sesekali muncul. Mungkin ada beban pikiran atau perubahan rutinitas belakangan ini. Sesi konseling atau berbagi cerita dengan psikolog dapat membantumu mencegah rasa cemas ini berkembang lebih jauh.';
+      } else if (totalScore <= 14) {
+        category = 'Kecemasan Sedang';
+        categoryClass = 'sedang';
+        title = 'Tingkat Kecemasanmu: Sedang';
+        description = 'Tingkat kecemasanmu berada pada level sedang. Kondisi ini kemungkinan sudah mulai mempengaruhi kenyamanan, konsentrasi, atau pola tidurmu. Sangat disarankan untuk berkonsultasi dengan psikolog berlisensi guna mendapatkan panduan regulasi emosi yang terarah.';
+      } else {
+        category = 'Kecemasan Berat';
+        categoryClass = 'berat';
+        title = 'Tingkat Kecemasanmu: Berat';
+        description = 'Skormu mengindikasikan tingkat kecemasan yang signifikan dan kemungkinan sangat membebani aktivitas harianmu. Kamu tidak perlu menghadapinya sendirian. Tim psikolog profesional di Ekspresi siap mendampingimu melalui sesi konseling online maupun tatap muka langsung.';
+      }
+
+      // Update Result Box
+      document.getElementById('scorePill').textContent = `Skor: ${totalScore} / 21`;
+      const catPill = document.getElementById('categoryPill');
+      catPill.textContent = category;
+      catPill.className = `category-pill ${categoryClass}`;
+      document.getElementById('resultTitle').textContent = title;
+      document.getElementById('resultDesc').textContent = description;
+
+      // Update link WA Konseling dengan info hasil skor
+      const encodedWaTextOnline = encodeURIComponent(
+        `Halo Tim Psikolog Ekspresi, saya baru saja menyelesaikan Tes Kecemasan di website dengan Skor: ${totalScore}/21 (${category}). Saya ingin menjadwalkan sesi Konseling Online.`
+      );
+      const encodedWaTextOffline = encodeURIComponent(
+        `Halo Tim Psikolog Ekspresi, saya baru saja menyelesaikan Tes Kecemasan di website dengan Skor: ${totalScore}/21 (${category}). Saya ingin menjadwalkan sesi Konseling Offline di klinik Medan.`
+      );
+      document.getElementById('btnKonselingOnline').href = `https://wa.me/6281265429073?text=${encodedWaTextOnline}`;
+      document.getElementById('btnKonselingOffline').href = `https://wa.me/6281265429073?text=${encodedWaTextOffline}`;
+
+      // Tampilkan Result Box dan scroll ke arahnya
+      const resultBox = document.getElementById('anxietyResultBox');
+      resultBox.style.display = 'block';
+      resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function smoothScrollToCounseling(e) {
+      e.preventDefault();
+      const target = document.getElementById('konseling');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+
+</body>
+</html>
